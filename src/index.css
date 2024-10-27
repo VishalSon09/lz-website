@@ -126,7 +126,7 @@ body {
 
   /* contact section */
   .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12 mb-10 py-5 ;
   }
 
   .field-label {
@@ -194,4 +194,69 @@ body {
   100% {
     transform: rotate(0deg);
   }
+}
+
+/* IMPORTED FROM ISLAND */
+.block-container {
+  position: relative;
+  transition: 250ms;
+  perspective: 500px;
+}
+
+.block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(11deg);
+  will-change: transform;
+  background-color: rgba(34, 34, 34, 0.123);
+
+  /* box-shadow: 2px 0 10px #7c7c7c; */
+}
+
+.block-container:hover > .btn-back {
+  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+}
+
+.block-container:hover > .btn-front {
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+.block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  background-color: #2c2c2c33;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+
+/* Neo Brutalism */
+
+.neo-brutalism-black {
+  background: transparent; /* dark gray background */
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #555; /* medium gray border */
+  box-shadow: 
+  0vmin 0vmin rgba(240, 240, 240, 1), /* soft white */
+  0.1vmin 0.1vmin rgba(230, 230, 230, 0.8), /* gentle white */
+  0.2vmin 0.2vmin rgba(220, 220, 220, 0.6), /* pale white */
+  0.3vmin 0.3vmin rgba(210, 210, 210, 0.4), /* misty white */
+  0.4vmin 0.4vmin rgba(200, 200, 200, 0.2), /* airy white */
+  0.5vmin 0.5vmin rgba(190, 190, 190, 0.1), /* whisper white */
+  0.6vmin 0.6vmin rgba(180, 180, 180, 0.05), /* faint white */
+  0.7vmin 0.7vmin rgba(170, 170, 170, 0.01); /* subtle white */
 }

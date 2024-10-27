@@ -1,4 +1,4 @@
-import Hero from './sections/Hero.jsx';
+import Home from './sections/Home.jsx';
 import About from './sections/About.jsx';
 import Footer from './sections/Footer.jsx';
 import Navbar from './sections/Navbar.jsx';
@@ -9,14 +9,16 @@ import WorkExperience from './sections/Experience.jsx';
 
 const App = () => {
   return (
-    <main className="max-w-7xl mx-auto relative">
+    <main className="mx-auto relative">
       <Navbar />
-      <Hero />
+      <Home />
+      <div className="max-w-7xl mx-auto relative">
       <About />
       <Projects />
       <Clients />
       <WorkExperience />
       <Contact />
+      </div>
       <Footer />
     </main>
   );

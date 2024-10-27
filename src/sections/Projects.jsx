@@ -7,6 +7,7 @@ import { Center, OrbitControls } from '@react-three/drei';
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
+// import ExpShader from '../components/ExpShader.jsx';
 
 const projectCount = myProjects.length;
 
@@ -61,7 +62,8 @@ const Projects = () => {
 
             <a
               className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
+              //href={currentProject.href}
+              href='/'
               target="_blank"
               rel="noreferrer">
               <p>Check Live Site</p>
@@ -88,6 +90,7 @@ const Projects = () => {
               <Suspense fallback={<CanvasLoader />}>
                 <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
                   <DemoComputer texture={currentProject.texture} />
+                  {/* <ExpShader /> */}
                 </group>
               </Suspense>
             </Center>

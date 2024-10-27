@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
+import { skills } from '../constants/index.js';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -23,10 +24,9 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">Hi, I’m Adrian Hajdin</p>
+              <p className="grid-headtext">INCEPTION</p>
               <p className="grid-subtext">
-                With 12 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites.
+                A professional lens man who apprehends his thoughts and arbitrary vision by printing an emotion, zestful technician who interacts with technical ​innovation and instruments to create an artistic output. At last a psychedelic wizard enhancing his view on panoramic field of globalization. 
               </p>
             </div>
           </div>
@@ -34,7 +34,7 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="assets/grid3.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
               <p className="grid-headtext">Tech Stack</p>
@@ -62,22 +62,51 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Rjieka, Croatia and open to remote work worldwide.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <p className="grid-headtext">What I create</p>
+              {/* <p className="grid-subtext">I&apos;m based in Rjieka, Croatia and open to remote work worldwide.</p> */}
+              <ul className="grid-subtext p-3 list-disc  " >
+                <li className='py-2'>Naturally occurring phenomena like rivers, waterfalls, splashes, clouds, smoke, avalanches, cyclones, fires, heat ripples, mirages, sandstorms, ​lightning bolts, flocks of birds and swarms of bugs.</li>
+                <li className='py-2'>Destructions scenarios including glass breaking and shattering, demolition of sky scrapers, digital pyrotechnics, erupting volcanoes, ​earthquakes, sparks, shockwaves, missiles, bombs, and fireworks.</li>
+                <li className='py-2'>Abstract anomalies such as, self-replicating bacteria, organic growth at the cellular scale, sacred celestial experiences, spells, portals, ​teleportations, energy beams, lasers, magnetic force fields, auroras, black holes, nebulas, data visualizations, glitches, fractals, morphing and ​transformations of indefinite structures.</li>
+              </ul>
+
+              <a href="#contact" className='w-fit'>
+                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+        <div className="xl:col-span-2 xl:row-span-3 ">
+          <div className="grid-container ">
+            {/* <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" /> */}
+
+            <div className=' flex flex-wrap justify-evenly p-5 gap-10 '>
+              {skills.map((skill) => (
+                <div key={skill.name} className='block-container w-20 h-20 '>
+                  
+                  <div className='flex flex-col justify-center items-center ' key={skill.name}>
+                  <div className='btn-back rounded-xl' />
+                    <div className='btn-front rounded-xl flex justify-center items-center'>
+                        <img
+                          src={skill.imageUrl}
+                          alt={skill.name}
+                          className='w-1/2 h-1/2 '
+                        />
+                    </div>
+                  </div>
+                  
+                </div>
+              ))}
+            </div>
+
+
+
 
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+              With a dedication to excellence and an unwavering commitment to my craft, I am constantly pushing the realm of hyper-realism to achieve the ​impossible.
               </p>
             </div>
           </div>
@@ -95,7 +124,7 @@ const About = () => {
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">adrian@jsmastery.pro</p>
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">lensmanzest@gmail.com</p>
               </div>
             </div>
           </div>

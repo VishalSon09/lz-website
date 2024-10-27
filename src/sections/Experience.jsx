@@ -1,10 +1,9 @@
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-
-import Developer from '../components/Developer.jsx';
 import CanvasLoader from '../components/Loading.jsx';
-import { workExperiences } from '../constants/index.js';
+import { experiences, workExperiences } from '../constants/index.js';
+import ExpShader from '../components/ExpShader.jsx';
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState('idle');
@@ -23,14 +22,16 @@ const WorkExperience = () => {
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
+                <ExpShader />
+                {/* <Developer position-y={-3} scale={3} animationName={animationName} /> */}
               </Suspense>
             </Canvas>
           </div>
 
           <div className="work-content">
+
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map((item, index) => (
+              {experiences.map((item, index) => (
                 <div
                   key={index}
                   onClick={() => setAnimationName(item.animation.toLowerCase())}
@@ -46,15 +47,23 @@ const WorkExperience = () => {
                   </div>
 
                   <div className="sm:p-5 px-2.5 py-5">
-                    <p className="font-bold text-white-800">{item.name}</p>
+                    <p className="font-bold text-white-800">{item.company_name}</p>
                     <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
+                      {item.title} -- <span>{item.date}</span>
                     </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
+                    <ul className='list-disc '>
+                      {item.points.map( (point, index) => (
+                        <li key={index} className="py-1 group-hover:text-white transition-all ease-in-out duration-500">
+                          {point}
+                        </li>
+                      ) )}
+                    </ul>
                   </div>
                 </div>
               ))}
             </div>
+
+            
           </div>
         </div>
       </div>
